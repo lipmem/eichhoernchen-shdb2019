@@ -1,33 +1,25 @@
 from flask import Flask, jsonify, request
 import pickle
+import networkx as nx
+import pandas as pd
 
 app = Flask(__name__)
 
-trees = [
-    {
-        'id': 1,
-        'title': u'Buy groceries',
-        'description': u'Milk, Cheese, Pizza, Fruit, Tylenol', 
-        'done': False
-    },
-    {
-        'id': 2,
-        'title': u'Learn Python',
-        'description': u'Need to find a good Python tutorial on the web', 
-        'done': False
-    }
-]
 
 ##tree_path = pickle.load(open("file.p", "rb"))
+def getPath(start_id,end_id):
+    p= nx.algorithms.shortest_paths.weighted.dijkstra_path(G,start_id,end_id)
+    return [(i,x[trees[trees.id==i].index][0],y[trees[trees.id==i].index][0]) for i in p]  
 
 @app.route('/app/api/v1.0/trees/', methods=['GET'])
 def get_tasks():
-	start_tree = request.args.get('start_tree', None)
-	end_tree = request.args.get('end_tree', None)
+    start_tree = request.args.get('start_tree', None)
+    end_tree = request.args.get('end_tree', None)
+    trees=getPath(int(start_tree),int(end_tree))
 
-
-	return jsonify({'trees': trees})
+    return jsonify({'trees': trees})
 
 
 if __name__ == '__main__':
+    [G,trees,x,y]=pickle.load(open( "routing_data.pickle", "rb" ))
     app.run()
