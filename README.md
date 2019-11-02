@@ -1,4 +1,14 @@
-# eichhoernchen-shdb2019
+# Nut Job - a Science Hack Day 2019 project
+
+You're a squirrel headed over to Görlitzer Park. How do you get there? 
+Nut Job provides squirrels and other rodent friends with tree-to-tree navigation from A to B.
+
+## Setup
+```
+pip install -r requirements.txt
+```
+
+## Usage
 
 ## Idea collection:
 
