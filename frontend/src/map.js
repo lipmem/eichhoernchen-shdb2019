@@ -14,6 +14,7 @@ let DefaultIcon = L.icon({
 });
 
 let map;
+let route;
 
 L.Marker.prototype.options.icon = DefaultIcon;
 
@@ -22,8 +23,8 @@ class Map extends React.Component {
     super(props);
     this.state = {
       uistate: { from: false, to: false },
-      from: 231701,
-      to: 222819
+      from: null,
+      to: null
     };
   }
 
@@ -107,6 +108,7 @@ class Map extends React.Component {
 
   getRoute() {
     console.log(this.state);
+    this.setState({ ...this.state, uistate: { from: false, to: false } });
     axios
       .get(
         "http://localhost:5000/app/api/v1.0/trees/?start_tree=" +
@@ -115,11 +117,12 @@ class Map extends React.Component {
           this.state.to
       )
       .then(data => {
-        let route = [];
+        let newroute = [];
         for (let tree of data.data.trees) {
           tree.shift();
-          route.push([tree[1], tree[0]]);
-          var polyline = L.polyline(route, { color: "red" }).addTo(map);
+          newroute.push([tree[1], tree[0]]);
+          if (route) map.removeLayer(route);
+          route = L.polyline(newroute, { color: "red" }).addTo(map);
         }
       });
   }
