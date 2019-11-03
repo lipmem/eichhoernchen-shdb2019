@@ -17,6 +17,7 @@ npm run start
 If the correct address does not open automatically use `localhost:3000`.
 
 ### Backend
+Disclaimer: For the backend to work you need more than 8GB RAM. 
 ```
 pip install -r requirements.txt
 python3 app.py
