@@ -1,14 +1,27 @@
 # Nut Job - a Science Hack Day 2019 project
 
-You're a squirrel headed over to Görlitzer Park. How do you get there? 
+You're a squirrel headed over to Hasenheide. How do you get there? 
 Nut Job provides squirrels and other rodent friends with tree-to-tree navigation from A to B.
 
+Select two trees on the map and click GetRoute to find the shortest path using only trees.
+As of now, squirrel navigation is only available in Görlitzer Park. More to come soon!
+
 ## Setup
+
+### Frontend 
+To get the frontend running on your machine enter `/frontend` folder 
+```
+npm i
+npm run start
+```
+If the correct address does not open automatically use `localhost:3000`.
+
+### Backend
 ```
 pip install -r requirements.txt
+python3 app.py
 ```
-
-## Usage
+The app is served on `localhost:5000`.
 
 ## Idea collection:
 
