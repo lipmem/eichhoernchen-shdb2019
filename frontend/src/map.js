@@ -1,7 +1,7 @@
 import React from "react";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
-import icon from "leaflet/dist/images/marker-icon.png";
+import icon from "./acorn.png";
 import iconShadow from "leaflet/dist/images/marker-shadow.png";
 import axios from "axios";
 import { throws } from "assert";
@@ -127,19 +127,12 @@ class Map extends React.Component {
       });
   }
 
-  render() {
-    let routeparam;
+  onTodoChange(value, input){
 
-    if (false && this.state.from && this.state.to) {
-      routeparam = (
-        <div>
-          <p>{this.state.from.lat}</p>
-          <p>{this.state.from.lng}</p>
-          <p>{this.state.to.lat}</p>
-          <p>{this.state.to.lng}</p>
-        </div>
-      );
-    }
+    this.setState({ ...this.state, [input]: value});
+  }
+
+  render() {
 
     return (
       <div>
@@ -149,21 +142,22 @@ class Map extends React.Component {
             className={this.state.uistate.from ? "active" : null}
             placeholder="From"
             value={this.state.from}
+            onChange={e => this.onTodoChange(e.target.value, "from")}
           />
           <input
             onClick={e => this.select("to")}
             className={this.state.uistate.to ? "active" : null}
             placeholder="To"
             value={this.state.to}
+            onChange={e => this.onTodoChange(e.target.value, "to")}
           />
 
           <button onClick={e => this.getRoute()} className={"req-btn"}>
-            GetRoute
+            Get Route
           </button>
         </div>
 
         <div id="mapid"></div>
-        {routeparam}
       </div>
     );
   }
