@@ -13,7 +13,7 @@ CORS(app)
 def getPath(start_id, end_id):
     p = nx.algorithms.shortest_paths.weighted.dijkstra_path(
         G, start_id, end_id)
-    return [(i, x[trees[trees.id == i].index][0], y[trees[trees.id == i].index][0]) for i in p]
+    return [(int(i), x[trees[trees.id == i].index][0], y[trees[trees.id == i].index][0]) for i in p]
 
 
 @app.route('/app/api/v1.0/trees/', methods=['GET'])
