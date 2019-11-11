@@ -16,7 +16,7 @@ To get the frontend running on your machine enter `/frontend` folder
 npm i
 npm run start
 ```
-If the correct address does not open automatically use `localhost:3000`.
+If the correct address does not open automatically, use `localhost:3000`.
 
 ### Backend
 Disclaimer: For the backend to work you need more than 8GB RAM. 
@@ -32,7 +32,7 @@ The app is served on `localhost:5000`.
 
 - Hardware compass for a squirrel
 
-- Suirrel speech commandline language
+- Squirrel speech command line language
 
 Basic Squirrel stats:
     (https://books.google.de/books?id=FAnEAgAAQBAJ&pg=PT70&lpg=PT70&dq=squirrel+muk-muk&source=bl&ots=UnUg938mlN&sig=VxKlgU7E_7JJqLYgQKyH3Ew1LsY&hl=en&sa=X&ei=51EpVaa0JcyWNsXIgLAL&redir_esc=y#v=onepage&q=squirrel%20muk-muk&f=false)
