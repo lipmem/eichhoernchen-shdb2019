@@ -6,7 +6,7 @@ Nut Job provides squirrels and other rodent friends with tree-to-tree navigation
 Select two trees on the map and click GetRoute to find the shortest path using only trees.
 As of now, squirrel navigation is only available in Görlitzer Park. More to come soon!
 
-Find our [https://nutjob-docs.glitch.me](presentation). Ask us [issues](https://github.com/Liptoon/eichhoernchen-shdb2019/issues)
+Find our [presentation](https://nutjob-docs.glitch.me). Ask us [issues](https://github.com/Liptoon/eichhoernchen-shdb2019/issues)
 
 **TreeFinder:** The `/TreeFinder/` submodule contains a standalone web app to find the closest tree to you.
 
